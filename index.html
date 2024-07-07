@@ -1,0 +1,96 @@
+CodePen Home
+Untitled
+Ansh
+Save
+Settings
+
+
+
+User Menu
+HTML
+6 unsaved changes 
+HTML Options
+  
+179
+            const video = document.getElementById("video");
+180
+            const overlay = document.getElementById("overlay");
+181
+            const declineButton = document.getElementById("decline-button");
+182
+            const acceptButton = document.getElementById("accept-button");
+183
+​
+184
+            let hasClicked;
+185
+​
+186
+        window.onbeforeunload = function( ) {
+187
+          if(hasClicked) return true;
+188
+        };
+189
+​
+190
+            function buttonClick(event) {
+191
+                event.preventDefault();
+192
+                if(!hasClicked) hasClicked = true;
+193
+                overlay.classList.add("hidden");
+194
+                video.play();
+195
+                videoClick();
+196
+            }
+197
+​
+198
+            function videoClick(event) {
+199
+                if(event) event.preventDefault();
+200
+                // if not fullscreen
+201
+                const { documentElement } = document;
+202
+          if(documentElement.requestFullscreen) documentElement.requestFullscreen();
+203
+          else if(documentElement.mozRequestFullScreen) documentElement.mozRequestFullScreen();
+204
+          else if(documentElement.webkitRequestFullscreen) documentElement.webkitRequestFullscreen();
+205
+          else if(documentElement.msRequestFullscreen) full.msRequestFullscreen();
+206
+            }
+207
+​
+208
+            acceptButton.addEventListener("click", buttonClick);
+209
+            declineButton.addEventListener("click", buttonClick);
+210
+            video.addEventListener("click", videoClick);
+211
+    </script>
+212
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"89f5499cacf9077d","r":1,"version":"2024.4.1","token":"af76a0f2ef2c4842bd3334f3c2936a9f"}' crossorigin="anonymous"></script>
+213
+</body>
+214
+</html>
+215
+​
+CSS
+CSS Options
+1
+JS
+JS Options
+1
+​
+
+ConsoleAssets
